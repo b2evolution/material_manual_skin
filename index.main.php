@@ -1,6 +1,6 @@
 <?php
 /**
- * This is the main/default page template for the "bootstrap_manual" skin.
+ * This is the main/default page template for the "material_manual" skin.
  *
  * This skin only uses one single template which includes most of its features.
  * It will also rely on default includes for specific dispays (like the comment form).
@@ -177,7 +177,31 @@ siteskin_include( '_site_body_header.inc.php' );
 
 	<?php
 		// -------------- MAIN CONTENT TEMPLATE INCLUDED HERE (Based on $disp) --------------
-		skin_include( '$disp$', $Skin->get_template( 'disp_params' ) );
+		skin_include('$disp$', array(
+                     // Comment template
+                    'comment_start' => '<div class="evo_comment panel panel-default">',
+                    'comment_end' => '</div>',
+                    'comment_post_before' => '<span class="panel-title in-response">',
+                    'comment_post_after' => '</span>',
+                    'comment_title_before' => '<div class="panel-heading">',
+                    'comment_title_after' => '<div class="clearfix"></div></div><div class="panel-body">',
+                    'comment_avatar_before' => '<div class="evo_comment_avatar">',
+                    'comment_avatar_after' => '</div>',
+                    'comment_rating_before' => '<div class="evo_comment_rating">',
+                    'comment_rating_after' => '</div>',
+                    'comment_text_before' => '<div class="evo_comment_text">',
+                    'comment_text_after' => '</div>',
+                    'comment_info_before' => '<div class="evo_comment_footer clear text-muted"><small>',
+                    'comment_info_after' => '</small></div></div>',
+                    'comment_attach_info' => get_icon('help', 'imgtag', array(
+                        'data-toggle' => 'tooltip',
+                        'data-placement' => 'bottom',
+                        'data-html' => 'true',
+                        'title' => htmlspecialchars(get_upload_restriction(array(
+                            'block_after' => '',
+                            'block_separator' => '<br /><br />')))
+                    )),
+));					
 		// Note: you can customize any of the sub templates included here by
 		// copying the matching php file into your skin directory.
 		// ------------------------- END OF MAIN CONTENT TEMPLATE ---------------------------
@@ -197,7 +221,7 @@ siteskin_include( '_site_body_header.inc.php' );
 
 				<div id="evo_container__sidebar">
 
-					<div class="evo_container evo_container__sidebar">
+					<div class="content panel-group evo_container evo_container__sidebar">
 					<?php
 						// <div data-spy="affix" data-offset-top="165" class="affix_block">
 						// ------------------------- "Sidebar" CONTAINER EMBEDDED HERE --------------------------
@@ -206,16 +230,28 @@ siteskin_include( '_site_body_header.inc.php' );
 						skin_container( NT_('Sidebar'), array(
 								// The following (optional) params will be used as defaults for widgets included in this container:
 								// This will enclose each widget in a block:
-								'block_start' => '<div class="panel panel-default widget $wi_class$">',
+								'block_start' => '<div class="panel panel-default evo_widget $wi_class$">',
 								'block_end'   => '</div>',
 								// This will enclose the title of each widget:
-								'block_title_start' => '<div class="panel-heading"><h4 class="panel-title">',
-								'block_title_end'   => '</h4></div>',
+								'block_title_start' => '<div class="panel-heading circle-svg-a">'
+								. '<a onClick="return false;" class="panel-toggle" data-toggle="collapse" data-target=".pcollapse-0" href="#">'
+					                        . '<span class="panel-icon"><i class="fa fa-angle-down"></i></span></a>'
+					                        . '<span class="panel-title">',
+								'block_title_end'   => '</span></div>',
 								// This will enclose the body of each widget:
-								'block_body_start' => '<div class="panel-body">',
-								'block_body_end'   => '</div>',
+								'block_body_start' => '<div class="panel-collapse"><div class="panel-body">',
+								'block_body_end'   => '</div></div>',
+				                            	// If a widget displays a list, this will enclose that list:
+				                            	'list_start' => '<ul>',
+				                            	'list_end' => '</ul>',
+				                            	// This will enclose each item in a list:
+				                            	'item_start' => '<li>',
+				                            	'item_end' => '</li>',
+				                            	// This will enclose sub-lists in a list:
+				                            	'group_start' => '<ul>',
+				                            	'group_end' => '</ul>',
 								// This will enclose (foot)notes:
-								'notes_start' => '<div class="small text-muted">',
+								'notes_start' => '<div class="small">',
 								'notes_end'   => '</div>',
 								// Widget 'Search form':
 								'search_class'         => 'compact_search_form',
@@ -234,7 +270,7 @@ siteskin_include( '_site_body_header.inc.php' );
 					?>
 					</div>
 
-					<div class="evo_container evo_container__sidebar2">
+					<div class="content panel-group evo_container evo_container__sidebar2">
 					<?php
 						// <div data-spy="affix" data-offset-top="165" class="affix_block">
 						// ------------------------- "Sidebar" CONTAINER EMBEDDED HERE --------------------------
@@ -243,16 +279,29 @@ siteskin_include( '_site_body_header.inc.php' );
 						skin_container( NT_('Sidebar 2'), array(
 								// The following (optional) params will be used as defaults for widgets included in this container:
 								// This will enclose each widget in a block:
-								'block_start' => '<div class="panel panel-default widget $wi_class$">',
+								'block_start' => '<div class="panel panel-default evo_widget $wi_class$">',
 								'block_end'   => '</div>',
 								// This will enclose the title of each widget:
-								'block_title_start' => '<div class="panel-heading"><h4 class="panel-title">',
-								'block_title_end'   => '</h4></div>',
+								'block_title_start' => '<div class="panel-heading circle-svg-a">'
+					                        . '<a onClick="return false;" class="panel-toggle" data-toggle="collapse" data-target=".pcollapse-0" href="#">'
+					                        . '<span class="panel-icon"><i class="fa fa-angle-down"></i></span></a>'
+					                        . '<span class="panel-title">',
+								'block_title_end' => '</span></div>',
+
 								// This will enclose the body of each widget:
-								'block_body_start' => '<div class="panel-body">',
-								'block_body_end'   => '</div>',
+								'block_body_start' => '<div class="panel-collapse"><div class="panel-body">',
+								'block_body_end'   => '</div></div>',
+								// If a widget displays a list, this will enclose that list:
+				                            	'list_start' => '<ul>',
+				                            	'list_end' => '</ul>',
+				                            	// This will enclose each item in a list:
+				                            	'item_start' => '<li>',
+				                            	'item_end' => '</li>',
+				                            	// This will enclose sub-lists in a list:
+				                            	'group_start' => '<ul>',
+				                            	'group_end' => '</ul>',
 								// This will enclose (foot)notes:
-								'notes_start' => '<div class="small text-muted">',
+								'notes_start' => '<div class="notes">',
 								'notes_end'   => '</div>',
 								// Widget 'Search form':
 								'search_class'         => 'compact_search_form',

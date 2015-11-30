@@ -64,7 +64,7 @@ class material_manual_Skin extends Skin
 		$r = array_merge( array(
 				'general_start' => array(
 					'layout' => 'begin_fieldset',
-					'label'  => T_('Layout Settings')
+					'label'  => T_('General Settings')
 				),
 					'bg_color' => array(
 						'label' => T_('Site background color'),
@@ -108,13 +108,20 @@ class material_manual_Skin extends Skin
 						'defaultvalue' => '#E7E7E7',
 						'type' => 'color',
 					),
+					'left_navigation' => array(
+						'label' => T_('Fixed sidebar'),
+						'note' => T_('Check to enable the fixed sidebar.'),
+						'defaultvalue' => 1,
+						'type' => 'checkbox',
+					),
 				'general_layout_end' => array(
 					'layout' => 'end_fieldset',
 				),
 				
 				
-				'header_layout_end' => array(
-					'layout' => 'end_fieldset',
+				'header_layout_start' => array(
+					'layout' => 'begin_fieldset',
+					'label'  => T_('Header Settings')
 				),
 					'header_bg' => array(
 						'label' => T_('Header background color'),
@@ -299,30 +306,32 @@ class material_manual_Skin extends Skin
 		// Custom headings color:
 		if( $color = $this->get_setting( 'headings_color' ) )
 		{
-			$custom_css .= '.content h1, .content h2, .content h3, .content h4, .content h5, .content h6, .content cite { color: '.$color." }\n";
+			$custom_css .= '.content h1, .content h2, .content h3, .content h4, .content h5, .content h6, .content cite, .main .title { color: '.$color." }\n";
 			$custom_css .= '.content cite { border-bottom: 2px solid '.$color." }\n";
 		}
 		// Custom link color:
 		if( $color = $this->get_setting( 'link_color' ) )
 		{
-			$custom_css .= '.main a, .main .nav > li a, .main .pagination>li>a, .main .pagination>li>span { color: '.$color." }\n";
+			$custom_css .= '.main a, .main .nav > li a, .main .pagination>li>a, .main .panel-default>.panel-heading a, .main .panel-default>.panel-heading .panel-icon, .main .panel-title, .main .evo_post_more_link, .main .evo_comment .panel-heading .evo_comment_title { color: '.$color." }\n";
 		}
 		// Custom link hover color:
 		if( $color = $this->get_setting( 'link_h_color' ) )
 		{
-			$custom_css .= '.content a:hover, .color-hover a:hover, .main .nav > li a:hover, .main .pagination>li>a:hover, .main .pagination>li>span:hover, .main .pagination>li.active>span, .main .pager li>a, .main .pager li>span, .profile_column_right .panel-default .panel-heading { color: '.$color." }\n";
+			$custom_css .= '.content a:hover, .color-hover a:hover, .main .nav > li a:hover, .main .pagination>li>a:hover, .main .pagination>li>span:hover, .main .pagination>li.active>span, .main .pager li>a, .main .pager li>span, .profile_column_right .panel-default .panel-heading, .main .panel-title a, .main .evo_post_more_link a, .main .evo_post__excerpt_more_link a, .main .evo_comment .panel-heading a:hover, .main .evo_comment .panel-heading a, profile_column_left h1, .profile_column_left .profile_buttons .btn-primary, .profile_column_left .profile_buttons .btn-primary button, .profile_column_left h1, .main button, .main input.submit, .main input.preview, .main input[type="reset"], .main input[type="submit"] { color: '.$color." }\n";
 			$custom_css .= '#bCalendarToday { background: '.$color." }\n";
 		}
 		// Sections background color:
 		if( $color = $this->get_setting( 'section_bg' ) )
 		{
-			$custom_css .= '.main .nav > li a, .main .pager li>a, .main .pager li>span, .featured_post { background: '.$color." }\n";
-			$custom_css .= '.main .pagination>li>a, .main .pagination>li>span { background: '.$color." !important }\n";
+			$custom_css .= '.main .nav > li a, .main .pager li>a, .main .pager li>span, .featured_post, .main .panel-default>.panel-heading, .main .evo_post_more_link a, .main .evo_post__excerpt_more_link a, .evo_comment_footer small a { background: '.$color." }\n";
+			$custom_css .= '.main .pagination>li>a, .main .pagination>li>span, .small >span, .profile_column_left .profile_buttons .btn-group a, .profile_column_left .profile_buttons p a button, .main .input.submit, .main input[type="button"]:focus, .main input[type="reset"]:focus, .main  input[type="submit"]:focus, .main button:active, .main input[type="button"]:active, .main input[type="reset"]:active, .main input[type="submit"]:active, .main input[type="submit"] { background: '.$color." !important }\n";
 		}
 		// Divider color:
 		if( $color = $this->get_setting( 'divider_color' ) )
 		{
-			$custom_css .= '.post { border-bottom: 1px solid '.$color." }\n";
+			$custom_css .= '.post, .main .panel-group .panel li, .content ul li, .main .evo_comment { border-bottom: 1px solid '.$color." }\n";
+			$custom_css .= '.post, .main .panel-group .panel li ul, .content ul li ul { border-top: 1px solid '.$color." }\n";
+			$custom_css .= 'input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], textarea, input[type="text"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="password"]:focus, input[type="search"]:focus, textarea:focus { border: 2px solid '.$color." !important }\n";
 		}
 		
 		
@@ -371,7 +380,7 @@ class material_manual_Skin extends Skin
 				break;
 		}
 
-		if( $this->is_left_navigation_visible() )
+		if( $this->is_left_navigation_visible() && $this->get_setting( 'left_navigation' ) == true )
 		{ // Include JS code for left navigation panel only when it is displayed:
 			require_js( $this->get_url().'left_navigation.js' );
 		}
@@ -554,15 +563,15 @@ class material_manual_Skin extends Skin
 					'fieldset_end'   => '</div></div></fieldset></div>'."\n",
 					'fieldstart'     => '<div class="form-group" $ID$>'."\n",
 					'fieldend'       => "</div>\n\n",
-					'labelclass'     => 'control-label col-sm-3',
+					'labelclass'     => 'control-label col-md-12',
 					'labelstart'     => '',
 					'labelend'       => "\n",
-					'labelempty'     => '<label class="control-label col-sm-3"></label>',
-					'inputstart'     => '<div class="controls col-sm-9">',
+					'labelempty'     => '<label class="control-label col-md-12"></label>',
+					'inputstart'     => '<div class="controls col-md-12">',
 					'inputend'       => "</div>\n",
 					'infostart'      => '<div class="controls col-sm-9"><div class="form-control-static">',
 					'infoend'        => "</div></div>\n",
-					'buttonsstart'   => '<div class="form-group"><div class="control-buttons col-sm-offset-3 col-sm-9">',
+					'buttonsstart'   => '<div class="form-group"><div class="control-buttons">',
 					'buttonsend'     => "</div></div>\n\n",
 					'customstart'    => '<div class="custom_content">',
 					'customend'      => "</div>\n",

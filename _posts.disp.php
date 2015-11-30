@@ -29,7 +29,15 @@ if( isset( $tag ) )
 	if( isset( $MainList ) && !empty( $MainList ) )
 	{
 		// -------------------- PREV/NEXT PAGE LINKS (POST LIST MODE) --------------------
-		mainlist_page_links( $params['pagination'] );
+		mainlist_page_links( array(
+				'block_start' => '<div class="center"><ul class="pagination">',
+				'block_end' => '</ul></div>',
+				'page_current_template' => '<span><b>$page_num$</b></span>',
+				'page_item_before' => '<li>',
+				'page_item_after' => '</li>',
+				'prev_text' => '<i class="fa fa-angle-left"></i>',
+				'next_text' => '<i class="fa fa-angle-right"></i>',
+			) );
 		// ------------------------- END OF PREV/NEXT PAGE LINKS -------------------------
 
 		// --------------------------------- START OF POSTS -------------------------------------
@@ -43,7 +51,15 @@ if( isset( $tag ) )
 		// ---------------------------------- END OF POSTS ------------------------------------
 
 		// -------------------- PREV/NEXT PAGE LINKS (POST LIST MODE) --------------------
-		mainlist_page_links( $params['pagination'] );
+		mainlist_page_links( array(
+				'block_start' => '<div class="center"><ul class="pagination">',
+				'block_end' => '</ul></div>',
+				'page_current_template' => '<span><b>$page_num$</b></span>',
+				'page_item_before' => '<li>',
+				'page_item_after' => '</li>',
+				'prev_text' => '<i class="fa fa-angle-left"></i>',
+				'next_text' => '<i class="fa fa-angle-right"></i>',
+			));
 		// ------------------------- END OF PREV/NEXT PAGE LINKS -------------------------
 	}
 }
@@ -159,7 +175,15 @@ elseif( !empty( $cat ) && ( $cat > 0 ) )
 else
 { // Display the latest posts:
 	// -------------------- PREV/NEXT PAGE LINKS (POST LIST MODE) --------------------
-	mainlist_page_links( $params['pagination'] );
+	mainlist_page_links( array(
+				'block_start' => '<div class="center"><ul class="pagination">',
+				'block_end' => '</ul></div>',
+				'page_current_template' => '<span><b>$page_num$</b></span>',
+				'page_item_before' => '<li>',
+				'page_item_after' => '</li>',
+				'prev_text' => '<i class="fa fa-angle-left"></i>',
+				'next_text' => '<i class="fa fa-angle-right"></i>',
+			));
 	// ------------------------- END OF PREV/NEXT PAGE LINKS -------------------------
 ?>
 <ul class="posts_list">
@@ -177,7 +201,15 @@ else
 </ul>
 <?php
 	// -------------------- PREV/NEXT PAGE LINKS (POST LIST MODE) --------------------
-	mainlist_page_links( $params['pagination'] );
+	mainlist_page_links( array(
+				'block_start' => '<div class="center"><ul class="pagination">',
+				'block_end' => '</ul></div>',
+				'page_current_template' => '<span><b>$page_num$</b></span>',
+				'page_item_before' => '<li>',
+				'page_item_after' => '</li>',
+				'prev_text' => '<i class="fa fa-angle-left"></i>',
+				'next_text' => '<i class="fa fa-angle-right"></i>',
+			));
 	// ------------------------- END OF PREV/NEXT PAGE LINKS -------------------------
 } // End of List of the latest posts
 
