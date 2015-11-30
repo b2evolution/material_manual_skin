@@ -1806,3 +1806,6 @@ user.anonymous {
 .fa.fa-caret-right {
   margin-right: 5px;
 }
+.disp_front .post {
+  border-top: 0;
+}
