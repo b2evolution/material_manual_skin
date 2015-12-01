@@ -69,7 +69,7 @@
 
     /* Panel toggle setup, identify panel toggle and collapse container */
 
-    $('.panel-group .panel').each(function() {
+    $('.panel-group .panel:not(.widget_core_content_hierarchy)').each(function() {
         panel_id++;
 
         if ($(this).find('li.title').size() > 0) {
