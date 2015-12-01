@@ -741,6 +741,12 @@ svg {
 .evo_widget h3 {
   margin: 10px 0;
 }
+.evo_widget .post {
+  border-top: 0 !important;
+}
+.evo_widget a span.fa {
+  margin-right: 10px !important;
+}
 /* Social Icons */
 body .main .ufld_icon_links {
   text-align: right;
