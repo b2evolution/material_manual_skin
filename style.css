@@ -250,8 +250,8 @@ div#skin_wrapper.skin_wrapper_loggedin .sitewide_header {
 }
 .chapters_list,
 .posts_list {
-  list-style: none;
-  margin: 0;
+  list-style: none !important;
+  margin: 0 !important;
 }
 .chapters_list .link .fa,
 .posts_list .link .fa {
@@ -266,7 +266,7 @@ div#skin_wrapper.skin_wrapper_loggedin .sitewide_header {
   margin: 0 0 6px 30px;
 }
 ol.breadcrumb {
-  margin-left: 0;
+  margin-left: 0 !important;
   padding-top: 15px;
 }
 .evo_post_title,
@@ -1808,4 +1808,7 @@ user.anonymous {
 }
 .disp_front .post {
   border-top: 0;
+}
+.disp_posts .evo_post__excerpt {
+  margin-bottom: 10px;
 }

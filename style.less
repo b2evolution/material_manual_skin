@@ -292,8 +292,8 @@ div#skin_wrapper.skin_wrapper_loggedin .sitewide_header {
 	}
 }
 .chapters_list, .posts_list {
-	list-style: none;
-	margin: 0;
+	list-style: none !important;
+	margin: 0 !important;
 	.link .fa {
 		margin-right: 5px;
 		font-size: inherit;
@@ -311,7 +311,7 @@ div#skin_wrapper.skin_wrapper_loggedin .sitewide_header {
 
 // Breadcrumb paths
 ol.breadcrumb {
-	margin-left: 0;
+	margin-left: 0 !important;
 	padding-top: 15px;
 }
 
@@ -2201,4 +2201,8 @@ body .main .ufld_icon_links {
 
 .disp_front .post {
 	border-top: 0;
+}
+
+.disp_posts .evo_post__excerpt {
+	margin-bottom: 10px;
 }
