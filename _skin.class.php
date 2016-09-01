@@ -18,9 +18,15 @@ if( !defined('EVO_MAIN_INIT') ) die( 'Please, do not access this page directly.'
 class material_manual_Skin extends Skin
 {
 	/**
+	 * Skin version
+	 * @var string
+	 */
+	var $version = '1.1.0';
+	
+	/**
 	 * Do we want to use style.min.css instead of style.css ?
 	 */
-	var $use_min_css = 'true';  // true|false|'check' Set this to true for better optimization
+	var $use_min_css = 'check';  // true|false|'check' Set this to true for better optimization
 
 	/**
 	 * Get default name for the skin.
@@ -68,43 +74,43 @@ class material_manual_Skin extends Skin
 				),
 					'bg_color' => array(
 						'label' => T_('Site background color'),
-						'note' => T_('Default color is #FFF.'),
+						'note' => T_('Default color is') . ' #FFF.',
 						'defaultvalue' => '#FFF',
 						'type' => 'color',
 					),
 					'text_color' => array(
 						'label' => T_('Site text color'),
-						'note' => T_('Default color is #666.'),
+						'note' => T_('Default color is') . ' #666.',
 						'defaultvalue' => '#666',
 						'type' => 'color',
 					),
 					'headings_color' => array(
 						'label' => T_('Site headings color'),
-						'note' => T_('Default color is #444.'),
+						'note' => T_('Default color is') . ' #444.',
 						'defaultvalue' => '#444',
 						'type' => 'color',
 					),
 					'link_color' => array(
 						'label' => T_('Site link color'),
-						'note' => T_('Default color is #212121.'),
+						'note' => T_('Default color is') . ' #212121.',
 						'defaultvalue' => '#212121',
 						'type' => 'color',
 					),
 					'link_h_color' => array(
 						'label' => T_('Site link hover color'),
-						'note' => T_('Default color is #448AFF.'),
+						'note' => T_('Default color is') . ' #448AFF.',
 						'defaultvalue' => '#448AFF',
 						'type' => 'color',
 					),
 					'section_bg' => array(
 						'label' => T_('Items background color'),
-						'note' => T_('This stands for menu links, buttons, featured/intro posts, etc. Default color is #F4F4F4.'),
+						'note' => T_('This stands for menu links, buttons, featured/intro posts, etc. Default color is') . ' #F4F4F4.',
 						'defaultvalue' => '#F4F4F4',
 						'type' => 'color',
 					),
 					'divider_color' => array(
 						'label' => T_('Divider color'),
-						'note' => T_('Divider is a line on the bottom of every post. Default color is #E7E7E7.'),
+						'note' => T_('Divider is a line on the bottom of every post. Default color is') . ' #E7E7E7.',
 						'defaultvalue' => '#E7E7E7',
 						'type' => 'color',
 					),
@@ -125,13 +131,13 @@ class material_manual_Skin extends Skin
 				),
 					'header_bg' => array(
 						'label' => T_('Header background color'),
-						'note' => T_('Default color is #448AFF.'),
+						'note' => T_('Default color is') . ' #448AFF.',
 						'defaultvalue' => '#448AFF',
 						'type' => 'color',
 					),
 					'header_color' => array(
 						'label' => T_('Header font color'),
-						'note' => T_('Default color is #FFF.'),
+						'note' => T_('Default color is') . ' #FFF.',
 						'defaultvalue' => '#FFF',
 						'type' => 'color',
 					),

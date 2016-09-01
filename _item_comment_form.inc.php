@@ -204,11 +204,11 @@ function validateCommentForm(form)
 /* ]]> *
 </script>';*/
 
-	$Form = new Form( $samedomain_htsrv_url.'comment_post.php', 'evo_comment_form_id_'.$Item->ID, 'post', NULL, 'multipart/form-data' );
+	$Form = new Form( get_htsrv_url().'comment_post.php', 'evo_comment_form_id_'.$Item->ID, 'post', NULL, 'multipart/form-data' );
 
 	$Form->switch_template_parts( $params['form_params'] );
 
-	$Form->begin_form( 'evo_form', '', array( 'target' => '_self'/*, 'onsubmit' => 'return validateCommentForm(this);'*/ ) );
+	$Form->begin_form( 'evo_form evo_form__comment', '', array( 'target' => '_self'/*, 'onsubmit' => 'return validateCommentForm(this);'*/ ) );
 
 	// TODO: dh> a plugin hook would be useful here to add something to the top of the Form.
 	//           Actually, the best would be, if the $Form object could be changed by a plugin
@@ -227,7 +227,7 @@ function validateCommentForm(form)
 			// Make sure we get back to the right page (on the right domain)
 			// fp> TODO: check if we can use the permalink instead but we must check that application wide,
 			// that is to say: check with the comments in a pop-up etc...
-			// url_rel_to_same_host(regenerate_url( '', '', $Blog->get('blogurl'), '&' ), $htsrv_url)
+			// url_rel_to_same_host(regenerate_url( '', '', $Blog->get('blogurl'), '&' ), get_htsrv_url())
 			// fp> what we need is a regenerate_url that will work in permalinks
 			// fp> below is a simpler approach:
 			$params['form_comment_redirect_to']
