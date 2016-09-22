@@ -98,9 +98,51 @@ $params = array_merge( array(
 			'after'      => '</h1>'.$action_links.'</div>',
 			'nav_target' => false,
 		) );
-	?>
 
-	<?php
+	if( $disp == 'single' )
+	{
+		?>
+		<div class="evo_container evo_container__item_single">
+		<?php
+		// ------------------------- "Item Single" CONTAINER EMBEDDED HERE --------------------------
+		// Display container contents:
+		skin_container( /* TRANS: Widget container name */ NT_('Item Single'), array(
+			'widget_context' => 'item',	// Signal that we are displaying within an Item
+			// The following (optional) params will be used as defaults for widgets included in this container:
+			// This will enclose each widget in a block:
+			'block_start' => '<div class="$wi_class$">',
+			'block_end' => '</div>',
+			// This will enclose the title of each widget:
+			'block_title_start' => '<h3>',
+			'block_title_end' => '</h3>',
+			// Template params for "Item Tags" widget
+			'widget_item_tags_before'    => '<nav class="small post_tags text-muted">',
+			'widget_item_tags_after'     => '</nav>',
+			'widget_item_tags_separator' => ', ',
+			// Template params for "Small Print" widget
+			'widget_item_small_print_before'         => '<p class="small text-muted">',
+			'widget_item_small_print_after'          => '</p>',
+			'widget_item_small_print_display_author' => false,
+			// Params for skin file "_item_content.inc.php"
+			'widget_item_content_params' => $params,
+			// Template params for "Item Attachments" widget:
+			'widget_item_attachments_params' => array(
+					'limit_attach'       => 1000,
+					'before'             => '<div class="evo_post_attachments"><h3>'.T_('Attachments').':</h3><ul class="evo_files">',
+					'after'              => '</ul></div>',
+					'before_attach'      => '<li class="evo_file">',
+					'after_attach'       => '</li>',
+					'before_attach_size' => ' <span class="evo_file_size">(',
+					'after_attach_size'  => ')</span>',
+				),
+		) );
+		// ----------------------------- END OF "Item Single" CONTAINER -----------------------------
+		?>
+		</div>
+		<?php
+	}
+	else
+	{
 		// ---------------------- POST CONTENT INCLUDED HERE ----------------------
 		skin_include( '_item_content.inc.php', $params );
 		// Note: You can customize the default item content by copying the generic
@@ -129,6 +171,7 @@ $params = array_merge( array(
 					'link_text' => T_('View history')
 				) );
 		}
+	}
 	?>
 
 	<?php

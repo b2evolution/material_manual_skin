@@ -30,13 +30,14 @@ if( isset( $tag ) )
 	{
 		// -------------------- PREV/NEXT PAGE LINKS (POST LIST MODE) --------------------
 		mainlist_page_links( array(
-				'block_start' => '<div class="center"><ul class="pagination">',
-				'block_end' => '</ul></div>',
-				'page_current_template' => '<span><b>$page_num$</b></span>',
-				'page_item_before' => '<li>',
-				'page_item_after' => '</li>',
-				'prev_text' => '<i class="fa fa-angle-left"></i>',
-				'next_text' => '<i class="fa fa-angle-right"></i>',
+                        'block_start' => '<div class="center"><ul class="pagination">',
+                        'block_end' => '</ul></div>',
+                        'page_current_template' => '<span class="current">$page_num$</span>',
+                        'page_item_before' => '<li>',
+                        'page_item_after' => '</li>','page_item_current_before' => '<li class="active">',
+						'page_item_current_after'  => '</li>',
+                        'prev_text' => '<i class="fa fa-angle-left"></i>',
+                        'next_text' => '<i class="fa fa-angle-right"></i>',
 			) );
 		// ------------------------- END OF PREV/NEXT PAGE LINKS -------------------------
 
@@ -52,13 +53,14 @@ if( isset( $tag ) )
 
 		// -------------------- PREV/NEXT PAGE LINKS (POST LIST MODE) --------------------
 		mainlist_page_links( array(
-				'block_start' => '<div class="center"><ul class="pagination">',
-				'block_end' => '</ul></div>',
-				'page_current_template' => '<span><b>$page_num$</b></span>',
-				'page_item_before' => '<li>',
-				'page_item_after' => '</li>',
-				'prev_text' => '<i class="fa fa-angle-left"></i>',
-				'next_text' => '<i class="fa fa-angle-right"></i>',
+                        'block_start' => '<div class="center"><ul class="pagination">',
+                        'block_end' => '</ul></div>',
+                        'page_current_template' => '<span class="current">$page_num$</span>',
+                        'page_item_before' => '<li>',
+                        'page_item_after' => '</li>','page_item_current_before' => '<li class="active">',
+						'page_item_current_after'  => '</li>',
+                        'prev_text' => '<i class="fa fa-angle-left"></i>',
+                        'next_text' => '<i class="fa fa-angle-right"></i>',
 			));
 		// ------------------------- END OF PREV/NEXT PAGE LINKS -------------------------
 	}
@@ -176,13 +178,14 @@ else
 { // Display the latest posts:
 	// -------------------- PREV/NEXT PAGE LINKS (POST LIST MODE) --------------------
 	mainlist_page_links( array(
-				'block_start' => '<div class="center"><ul class="pagination">',
-				'block_end' => '</ul></div>',
-				'page_current_template' => '<span><b>$page_num$</b></span>',
-				'page_item_before' => '<li>',
-				'page_item_after' => '</li>',
-				'prev_text' => '<i class="fa fa-angle-left"></i>',
-				'next_text' => '<i class="fa fa-angle-right"></i>',
+                        'block_start' => '<div class="center"><ul class="pagination">',
+                        'block_end' => '</ul></div>',
+                        'page_current_template' => '<span class="current">$page_num$</span>',
+                        'page_item_before' => '<li>',
+                        'page_item_after' => '</li>','page_item_current_before' => '<li class="active">',
+						'page_item_current_after'  => '</li>',
+                        'prev_text' => '<i class="fa fa-angle-left"></i>',
+                        'next_text' => '<i class="fa fa-angle-right"></i>',
 			));
 	// ------------------------- END OF PREV/NEXT PAGE LINKS -------------------------
 ?>
@@ -202,13 +205,14 @@ else
 <?php
 	// -------------------- PREV/NEXT PAGE LINKS (POST LIST MODE) --------------------
 	mainlist_page_links( array(
-				'block_start' => '<div class="center"><ul class="pagination">',
-				'block_end' => '</ul></div>',
-				'page_current_template' => '<span><b>$page_num$</b></span>',
-				'page_item_before' => '<li>',
-				'page_item_after' => '</li>',
-				'prev_text' => '<i class="fa fa-angle-left"></i>',
-				'next_text' => '<i class="fa fa-angle-right"></i>',
+                        'block_start' => '<div class="center"><ul class="pagination">',
+                        'block_end' => '</ul></div>',
+                        'page_current_template' => '<span class="current">$page_num$</span>',
+                        'page_item_before' => '<li>',
+                        'page_item_after' => '</li>','page_item_current_before' => '<li class="active">',
+						'page_item_current_after'  => '</li>',
+                        'prev_text' => '<i class="fa fa-angle-left"></i>',
+                        'next_text' => '<i class="fa fa-angle-right"></i>',
 			));
 	// ------------------------- END OF PREV/NEXT PAGE LINKS -------------------------
 } // End of List of the latest posts

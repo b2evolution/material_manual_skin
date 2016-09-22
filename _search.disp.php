@@ -14,7 +14,16 @@
 if( !defined('EVO_MAIN_INIT') ) die( 'Please, do not access this page directly.' );
 
 $params = array_merge( array(
-		'pagination'               => array(),
+		'pagination'               => array(
+                        'block_start' => '<div class="center"><ul class="pagination">',
+                        'block_end' => '</ul></div>',
+                        'page_current_template' => '<span class="current">$page_num$</span>',
+                        'page_item_before' => '<li>',
+                        'page_item_after' => '</li>','page_item_current_before' => '<li class="active">',
+						'page_item_current_after'  => '</li>',
+                        'prev_text' => '<i class="fa fa-angle-left"></i>',
+                        'next_text' => '<i class="fa fa-angle-right"></i>',
+		),
 		'search_class'             => 'extended_search_form',
 				'search_input_before'  => '<div class="input-group">',
 				'search_input_after'   => '',
