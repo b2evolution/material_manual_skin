@@ -4,7 +4,7 @@ This is a skin for b2evolution CMS v6.
 
 Link to skin: http://skins.b2evolution.net/material-manual-skin
 
-(skinshot_front.jpg)
+![](skinshot.png)
 
 ====
 
