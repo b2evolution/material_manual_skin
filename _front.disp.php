@@ -53,7 +53,7 @@ skin_widget( array(
 
 if( ! empty( $intro_Item ) )
 {
-	global $c, $ReqURI;
+	global $c, $ReqURI, $app_version;
 	$c = 1; // Display comments
 	echo '<div class="evo_content_block">'; // Beginning of posts display
 	// ------------------ FEEDBACK (COMMENTS/TRACKBACKS) INCLUDED HERE ------------------

@@ -202,6 +202,12 @@ div.bSideItem h4 {
 .evo_form__login .btn {
   margin-top: 5px;
 }
+.evo_form__login .panel {
+  border: none;
+}
+.evo_form__login .panel .panel-body.fieldset {
+  padding: 0;
+}
 #login_form .control-buttons {
   text-align: left;
 }
@@ -1260,6 +1266,106 @@ user.anonymous {
 .main .comment_form input[type="submit"] {
   text-align: left;
 }
+.main .evo_item_meta_comments .panel {
+  box-shadow: 0 0 0;
+  border: 0;
+  border-radius: 0;
+  margin-top: 2.6em;
+  margin-bottom: 0;
+}
+.main .evo_item_meta_comments .panel.panel-meta {
+  border: 2px solid #5bc0de;
+  padding: 0 15px;
+}
+.main .evo_item_meta_comments .panel.panel-meta .panel-body {
+  background: transparent !important;
+}
+.main .evo_item_meta_comments .panel .panel-heading {
+  background: transparent !important;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  margin: 1em 0;
+  font-weight: 300;
+  font-size: 1.7em;
+  color: #444;
+  margin: 20px 0;
+}
+.main .evo_item_meta_comments .panel .panel-heading .panel-title {
+  font-weight: 400;
+  margin-left: 0;
+}
+.main .evo_item_meta_comments .panel form {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: visible;
+}
+.main .evo_item_meta_comments .panel form .form-group {
+  margin-right: 0;
+  margin-left: 0;
+}
+.main .evo_item_meta_comments .panel form .form-group .control-label {
+  text-align: left;
+}
+.main .evo_item_meta_comments .panel form .control-buttons input {
+  margin: 0.4em 1em 0.4em 0;
+}
+.main .evo_item_meta_comments .panel form #uploadfile_A1 {
+  display: inline-block;
+  font-size: 1em;
+  line-height: 1em;
+}
+.main .evo_item_meta_comments .panel form #uploadfile_A1:focus {
+  outline: 0;
+}
+.main .evo_item_meta_comments .panel form #ffield_uploadfile_A1 .controls .help-inline {
+  color: #999;
+  font-size: 84%;
+  display: inline-block;
+}
+.main .evo_item_meta_comments .panel form #ffield_uploadfile_A1 .controls .help-inline span {
+  font-size: 1.4em;
+}
+.main .evo_item_meta_comments .panel form .panel {
+  border: 0;
+  box-shadow: 0 0 0;
+  border-radius: 0;
+  margin: 0;
+}
+.main .evo_item_meta_comments .panel textarea:focus {
+  outline: 0;
+  box-shadow: 0 0 0;
+}
+.main .evo_item_meta_comments .panel .panel-heading {
+  background: transparent !important;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  margin: 1em 0;
+  font-weight: 300;
+}
+.main .evo_item_meta_comments .panel .panel-heading h2 {
+  font-weight: 300;
+  font-size: 1.7em;
+  color: #444;
+  margin: 20px 0;
+}
+.main .evo_item_meta_comments .panel .panel-body {
+  padding: 0;
+}
+.main .evo_item_meta_comments .panel .control-label {
+  text-align: left;
+  padding: 0;
+  font-weight: 500;
+  letter-spacing: .6px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  color: rgba(0, 0, 0, 0.6);
+}
+.main .evo_item_meta_comments .panel input[type="submit"] {
+  text-align: left;
+}
 /* Comment Notification */
 .evo_post_comment_notification p {
   text-align: left !important;
@@ -1791,4 +1897,298 @@ user.anonymous {
 }
 .disp_posts .evo_post__excerpt {
   margin-bottom: 10px;
+}
+.disp_threads .content .form-horizontal .control-label,
+.disp_login .content .form-horizontal .control-label,
+.disp_register .content .form-horizontal .control-label,
+.disp_lostpassword .content .form-horizontal .control-label,
+.disp_msgform .content .form-horizontal .control-label {
+  text-align: left;
+}
+.disp_threads .content .token-input-list-facebook,
+.disp_login .content .token-input-list-facebook,
+.disp_register .content .token-input-list-facebook,
+.disp_lostpassword .content .token-input-list-facebook,
+.disp_msgform .content .token-input-list-facebook {
+  margin-left: 0;
+}
+.disp_register .content input.input_text {
+  width: 100% !important;
+}
+.content .token-input-list-facebook {
+  padding: 0.5em;
+  border: 2px solid #E7E7E7;
+  border-radius: 0;
+  box-shadow: none;
+}
+.content .token-input-list-facebook > li {
+  padding: 5px;
+  border-radius: 0;
+}
+.content .token-input-list-facebook > li.token-input-input-token-facebook > input {
+  margin-top: -20px;
+}
+.compact_search_form .input-group-btn {
+  font-size: 18px;
+}
+.compact_search_form .input-group-btn input.search_submit {
+  padding: 0.8em;
+  margin: 0;
+}
+.radio-group input[type='radio'] {
+  margin-top: 7px;
+}
+.disp_mediaidx .widget_flow_blocks div {
+  margin: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 5px 0px rgba(46, 46, 46, 0.2);
+}
+ul.message_group {
+  border: none !important;
+}
+.disp_contacts .results,
+.disp_threads .results {
+  box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.15);
+  border: none;
+  border-radius: 0;
+}
+.disp_contacts .results .panel-heading,
+.disp_threads .results .panel-heading {
+  padding: 0 20px;
+  border-radius: 0;
+}
+.disp_contacts .results .panel-heading > h3,
+.disp_threads .results .panel-heading > h3 {
+  margin: 0;
+  padding: 20px 0;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.disp_contacts .results .panel-heading .action_icon,
+.disp_threads .results .panel-heading .action_icon {
+  margin: 13px 0 0 20px;
+  border-radius: 2px;
+  border: none;
+  box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.05);
+  padding: 8px 10px;
+}
+.disp_contacts .results .panel-footer,
+.disp_threads .results .panel-footer {
+  padding: 20px;
+  border: none;
+}
+.disp_contacts .results .form-group > label,
+.disp_threads .results .form-group > label {
+  display: block;
+}
+.disp_contacts .results .form-group > select,
+.disp_threads .results .form-group > select {
+  padding: 0.8em;
+  width: 100%;
+  height: auto;
+  border: 2px solid #E7E7E7;
+  border-radius: 0;
+  box-shadow: none;
+}
+.disp_contacts .results .form-group.pull-right,
+.disp_threads .results .form-group.pull-right {
+  float: none !important;
+}
+.disp_contacts .results .form-group.pull-right button,
+.disp_threads .results .form-group.pull-right button {
+  padding: 10px 20px;
+  box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.15);
+  border: none;
+  border-radius: 0;
+}
+.disp_contacts .results .form-group.field_inline > label,
+.disp_threads .results .form-group.field_inline > label {
+  margin-top: 27px;
+}
+.tabs > div a:before {
+  width: 30px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+.tabs > div:first-child a:before {
+  content: '\f007';
+  font-family: "Fontawesome";
+}
+.tabs > div:nth-child(2) a:before {
+  content: '\f03e';
+  font-family: "Fontawesome";
+}
+.tabs > div:nth-child(3) a:before {
+  content: '\f084';
+  font-family: "Fontawesome";
+}
+.tabs > div:nth-child(4) a:before {
+  content: '\f1de';
+  font-family: "Fontawesome";
+}
+.tabs > div:nth-child(5) a:before {
+  content: '\f0f3';
+  font-family: "Fontawesome";
+}
+.disp_profile .form-horizontal label,
+.disp_avatar .form-horizontal label,
+.disp_pwdchange .form-horizontal label,
+.disp_userprefs .form-horizontal label,
+.disp_subs .form-horizontal label {
+  display: block;
+}
+.disp_profile .form-horizontal select,
+.disp_avatar .form-horizontal select,
+.disp_pwdchange .form-horizontal select,
+.disp_userprefs .form-horizontal select,
+.disp_subs .form-horizontal select {
+  padding: 0.8em;
+  width: 100%;
+  height: auto;
+  border: 2px solid #E7E7E7;
+  border-radius: 0;
+  box-shadow: none;
+}
+.disp_profile .form-horizontal .control-label,
+.disp_avatar .form-horizontal .control-label,
+.disp_pwdchange .form-horizontal .control-label,
+.disp_userprefs .form-horizontal .control-label,
+.disp_subs .form-horizontal .control-label {
+  text-align: left;
+}
+.disp_profile .panel,
+.disp_avatar .panel,
+.disp_pwdchange .panel,
+.disp_userprefs .panel,
+.disp_subs .panel {
+  box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.15);
+  border: none;
+  border-radius: 0;
+}
+.disp_profile .panel .panel-heading,
+.disp_avatar .panel .panel-heading,
+.disp_pwdchange .panel .panel-heading,
+.disp_userprefs .panel .panel-heading,
+.disp_subs .panel .panel-heading {
+  padding: 20px;
+  border-radius: 0;
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.disp_profile .panel .panel-heading .action_icon,
+.disp_avatar .panel .panel-heading .action_icon,
+.disp_pwdchange .panel .panel-heading .action_icon,
+.disp_userprefs .panel .panel-heading .action_icon,
+.disp_subs .panel .panel-heading .action_icon {
+  margin: 13px 0 0 20px;
+  border-radius: 2px;
+  border: none;
+  box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.05);
+  padding: 8px 10px;
+}
+.disp_profile .panel .panel-footer,
+.disp_avatar .panel .panel-footer,
+.disp_pwdchange .panel .panel-footer,
+.disp_userprefs .panel .panel-footer,
+.disp_subs .panel .panel-footer {
+  padding: 20px;
+  border: none;
+}
+.disp_profile .panel .form-group > label,
+.disp_avatar .panel .form-group > label,
+.disp_pwdchange .panel .form-group > label,
+.disp_userprefs .panel .form-group > label,
+.disp_subs .panel .form-group > label {
+  display: block;
+}
+.disp_profile .panel .form-group > select,
+.disp_avatar .panel .form-group > select,
+.disp_pwdchange .panel .form-group > select,
+.disp_userprefs .panel .form-group > select,
+.disp_subs .panel .form-group > select {
+  padding: 0.8em;
+  width: 100%;
+  height: auto;
+  border: 2px solid #E7E7E7;
+  border-radius: 0;
+  box-shadow: none;
+}
+.disp_profile .panel .form-group.pull-right,
+.disp_avatar .panel .form-group.pull-right,
+.disp_pwdchange .panel .form-group.pull-right,
+.disp_userprefs .panel .form-group.pull-right,
+.disp_subs .panel .form-group.pull-right {
+  float: none !important;
+}
+.disp_profile .panel .form-group.pull-right button,
+.disp_avatar .panel .form-group.pull-right button,
+.disp_pwdchange .panel .form-group.pull-right button,
+.disp_userprefs .panel .form-group.pull-right button,
+.disp_subs .panel .form-group.pull-right button {
+  padding: 10px 20px;
+  box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.15);
+  border: none;
+  border-radius: 0;
+}
+.disp_profile .panel .form-group.field_inline > label,
+.disp_avatar .panel .form-group.field_inline > label,
+.disp_pwdchange .panel .form-group.field_inline > label,
+.disp_userprefs .panel .form-group.field_inline > label,
+.disp_subs .panel .form-group.field_inline > label {
+  margin-top: 27px;
+}
+.disp_profile .panel button.btn,
+.disp_avatar .panel button.btn,
+.disp_pwdchange .panel button.btn,
+.disp_userprefs .panel button.btn,
+.disp_subs .panel button.btn,
+.disp_profile .panel input[type="submit"],
+.disp_avatar .panel input[type="submit"],
+.disp_pwdchange .panel input[type="submit"],
+.disp_userprefs .panel input[type="submit"],
+.disp_subs .panel input[type="submit"],
+.disp_profile .panel .controls a.btn,
+.disp_avatar .panel .controls a.btn,
+.disp_pwdchange .panel .controls a.btn,
+.disp_userprefs .panel .controls a.btn,
+.disp_subs .panel .controls a.btn {
+  padding: 14px 16px;
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 19px;
+  margin: 1em 0 0;
+  outline: 0;
+  letter-spacing: 0.6px;
+  border: 0;
+  border-radius: 2px;
+}
+.disp_profile .panel input[type="submit"],
+.disp_avatar .panel input[type="submit"],
+.disp_pwdchange .panel input[type="submit"],
+.disp_userprefs .panel input[type="submit"],
+.disp_subs .panel input[type="submit"] {
+  padding: 16px;
+}
+.disp_profile .panel .controls a.btn,
+.disp_avatar .panel .controls a.btn,
+.disp_pwdchange .panel .controls a.btn,
+.disp_userprefs .panel .controls a.btn,
+.disp_subs .panel .controls a.btn {
+  padding: 15px 16px;
+}
+.disp_profile .panel .checkbox input[type=checkbox],
+.disp_avatar .panel .checkbox input[type=checkbox],
+.disp_pwdchange .panel .checkbox input[type=checkbox],
+.disp_userprefs .panel .checkbox input[type=checkbox],
+.disp_subs .panel .checkbox input[type=checkbox] {
+  position: static;
+}
+@media (min-width: 768px) {
+  .disp_contacts .results .form-group.pull-right,
+  .disp_threads .results .form-group.pull-right {
+    float: right !important;
+    margin-top: 20px;
+  }
 }

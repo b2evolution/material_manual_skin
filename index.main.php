@@ -160,6 +160,8 @@ siteskin_include( '_site_body_header.inc.php' );
 						'category_text'     => '',
 						'categories_text'   => '',
 						'catdir_text'       => '',
+						'contacts_text'     => '',
+						'messages_text'     => '',
 						'front_text'        => '',
 						'posts_text'        => '',
 						'register_text'     => '',

@@ -21,7 +21,7 @@ class material_manual_Skin extends Skin
 	 * Skin version
 	 * @var string
 	 */
-	var $version = '1.1.1';
+	var $version = '1.2.0';
 	
 	/**
 	 * Do we want to use style.min.css instead of style.css ?
@@ -34,7 +34,7 @@ class material_manual_Skin extends Skin
 	 */
 	function get_default_name()
 	{
-		return 'Material Manual';
+		return 'Material Manual Skin';
 	}
 
 
@@ -74,15 +74,27 @@ class material_manual_Skin extends Skin
 	public function get_supported_coll_kinds()
 	{
 		$supported_kinds = array(
-			'main'   => 'no',
-			'std'    => 'no',		// Blog
-			'photo'  => 'no',
-			'forum'  => 'no',
-			'manual' => 'Yes',
-			'group'  => 'no',  // Tracker
-			// Any kind that is not listed should be considered as "maybe" supported
-		);
+				'main' => 'no',
+				'std' => 'no',		// Blog
+				'photo' => 'no',
+				'forum' => 'no',
+				'manual' => 'yes',
+				'group' => 'no',  // Tracker
+				// Any kind that is not listed should be considered as "maybe" supported
+			);
+
 		return $supported_kinds;
+	}
+	
+	
+	/*
+	 * What CSS framework does has this skin been designed with?
+	 *
+	 * This may impact default markup returned by Skin::get_template() for example
+	 */
+	function get_css_framework()
+	{
+		return 'bootstrap';
 	}
 
 
@@ -350,14 +362,15 @@ class material_manual_Skin extends Skin
 		// Custom link hover color:
 		if( $color = $this->get_setting( 'link_h_color' ) )
 		{
-			$custom_css .= '.content a:hover, .color-hover a:hover, .main .nav > li a:hover, .main .pagination>li>a:hover, .main .pagination>li>span:hover, .main .pagination>li.active>span, .main .pager li>a, .main .pager li>span, .profile_column_right .panel-default .panel-heading, .main .panel-title a, .main .evo_post_more_link a, .main .evo_post__excerpt_more_link a, .main .evo_comment .panel-heading a:hover, .main .evo_comment .panel-heading a, profile_column_left h1, .profile_column_left .profile_buttons .btn-primary, .profile_column_left .profile_buttons .btn-primary button, .profile_column_left h1, .main button, .main input.submit, .main input.preview, .main input[type="reset"], .main input[type="submit"] { color: '.$color." }\n";
+			$custom_css .= '.content a:hover, .color-hover a:hover, .main .nav > li a:hover, .main .pagination>li>a:hover, .main .pagination>li>span:hover, .main .pagination>li.active>span, .main .pager li>a, .main .pager li>span, .profile_column_right .panel-default .panel-heading, .main .panel-title a, .main .evo_post_more_link a, .main .evo_post__excerpt_more_link a, .main .evo_comment .panel-heading a:hover, .main .evo_comment .panel-heading a, profile_column_left h1, .profile_column_left .profile_buttons .btn-primary, .profile_column_left .profile_buttons .btn-primary button, .profile_column_left h1, .main button, .main input.submit, .main input.preview, .main input[type="reset"], .main input[type="submit"], .tabs > .selected a, .disp_profile .panel button.btn, .disp_subs .form-horizontal .controls span.help-inline a.btn { color: '.$color." }\n";
 			$custom_css .= '#bCalendarToday { background: '.$color." }\n";
 		}
 		// Sections background color:
 		if( $color = $this->get_setting( 'section_bg' ) )
 		{
 			$custom_css .= '.main .nav > li a, .main .pager li>a, .main .pager li>span, .featured_post, .main .panel-default>.panel-heading, .main .evo_post_more_link a, .main .evo_post__excerpt_more_link a, .evo_comment_footer small a { background: '.$color." }\n";
-			$custom_css .= '.main .pagination>li>a, .main .pagination>li>span, .small >span, .profile_column_left .profile_buttons .btn-group a, .profile_column_left .profile_buttons p a button, .main .input.submit, .main input[type="button"]:focus, .main input[type="reset"]:focus, .main  input[type="submit"]:focus, .main button:active, .main input[type="button"]:active, .main input[type="reset"]:active, .main input[type="submit"]:active, .main input[type="submit"] { background: '.$color." !important }\n";
+			$custom_css .= '.main .pagination>li>a, .main .pagination>li>span, .small >span, .profile_column_left .profile_buttons .btn-group a, .profile_column_left .profile_buttons p a button, .main .input.submit, .main input[type="button"]:focus, .main input[type="reset"]:focus, .main  input[type="submit"]:focus, .main button:active, .main input[type="button"]:active, .main input[type="reset"]:active, .main input[type="submit"]:active, .main input[type="submit"], .disp_mediaidx .widget_flow_blocks div, .disp_profile .panel button.btn, .disp_subs .form-horizontal .controls span.help-inline a.btn { background: '.$color." !important }\n";
+			$custom_css .= '.main input[type="submit"], .disp_profile .panel button.btn { border: 2px solid '.$color." }\n";
 		}
 		// Divider color:
 		if( $color = $this->get_setting( 'divider_color' ) )
@@ -371,12 +384,12 @@ class material_manual_Skin extends Skin
 		// Custom link hover color:
 		if( $color = $this->get_setting( 'header_bg' ) )
 		{
-			$custom_css .= '.masterhead { background-color: '.$color." }\n";
+			$custom_css .= '.masterhead, .disp_contacts .results .form-group.pull-right button, .disp_threads .results .form-group.pull-right button, .panel-heading .action_icon { background-color: '.$color." }\n";
 		}
 		// Custom link hover color:
 		if( $color = $this->get_setting( 'header_color' ) )
 		{
-			$custom_css .= '.masterhead, .masterhead .widget_core_coll_title a, .masterhead .widget_core_coll_title a:hover { color: '.$color."}\n";
+			$custom_css .= '.masterhead, .masterhead .widget_core_coll_title a, .masterhead .widget_core_coll_title a:hover, .disp_contacts .results .form-group.pull-right button, .disp_threads .results .form-group.pull-right button, .main .panel-default>.panel-heading .action_icon { color: '.$color."}\n";
 		}
 		
 		
@@ -415,7 +428,7 @@ class material_manual_Skin extends Skin
 
 		if( $this->is_left_navigation_visible() && $this->get_setting( 'left_navigation' ) == true )
 		{ // Include JS code for left navigation panel only when it is displayed:
-			require_js( $this->get_url().'left_navigation.js' );
+			require_js( 'left_navigation.js', 'relative' );
 		}
 		
 		// Function for custom css
@@ -873,12 +886,19 @@ class material_manual_Skin extends Skin
 	 * Check if we can display a widget container
 	 *
 	 * @param string Widget container key: 'header', 'page_top', 'menu', 'sidebar', 'sidebar2', 'footer'
-	 * @param string Skin setting name
 	 * @return boolean TRUE to display
 	 */
-	function is_visible_container( $container_key, $setting_name = 'access_login_containers' )
+	function is_visible_container( $container_key )
 	{
-		$access = $this->get_setting( $setting_name );
+		global $Collection, $Blog;
+
+		if( $Blog->has_access() )
+		{	// If current user has an access to this collection then don't restrict containers:
+			return true;
+		}
+
+		// Get what containers are available for this skin when access is denied or requires login:
+		$access = $this->get_setting( 'access_login_containers' );
 
 		return ( ! empty( $access ) && ! empty( $access[ $container_key ] ) );
 	}

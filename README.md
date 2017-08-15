@@ -10,6 +10,13 @@ Link to skin: http://skins.b2evolution.net/material-manual-skin
 
 ### Update Log
 
+#### v1.2.0-beta
+- added .gitignore
+- disps layout fix
+- disp "flagged" enabled
+- search form layout fix
+- meta comments enabled
+
 #### v1.1.1-stable
 - added get_supported_coll_kinds() for getting supported collection kinds
 - setting #skin_wrapper instead of <body> for custom_css
