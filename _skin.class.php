@@ -334,6 +334,7 @@ class material_manual_Skin extends Skin
 			) );
 
 		// Skin specific initializations:
+		add_headline( '<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">' );
 					
 		// Add custom CSS:
 		$custom_css = '';
