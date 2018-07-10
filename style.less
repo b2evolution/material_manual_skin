@@ -26,7 +26,6 @@
 #evo_container__sidebar {
 	background: #FFF;
 	width: 262px;
-	
 	.widget_core_content_hierarchy {
 		li.selected a {
 			font-weight: 700;
@@ -482,26 +481,26 @@ textarea,
 
 /* Content Typography */
 
-.content h1 { 
-    font-size: 1.75em; 
+.content h1 {
+    font-size: 1.75em;
     letter-spacing: 1px;
 }
 
-.content h2 { 
-    font-size: 1.5em; 
+.content h2 {
+    font-size: 1.5em;
     letter-spacing: 1px;
 }
 
-.content h3 { 
-    font-size: 1.25em; 
+.content h3 {
+    font-size: 1.25em;
 }
 
-.content h4 { 
-    font-size: 1.1em; 
+.content h4 {
+    font-size: 1.1em;
 }
 
-.content h5 { 
-    font-size: 1em; 
+.content h5 {
+    font-size: 1em;
 }
 
 .content h6 {
@@ -670,12 +669,12 @@ big {
 }
 
 .jumbotron {
-    
+
     .title {
         display: inline-block;
         margin-right: 0.8em;
     }
-    
+
 }
 
 
@@ -693,12 +692,12 @@ big {
         padding: 0;
     }
     input[type="search"] {
-        -webkit-appearance: textfield; 
+        -webkit-appearance: textfield;
     }
-    input[type="search"]::-webkit-search-decoration { 
+    input[type="search"]::-webkit-search-decoration {
         -webkit-appearance: none;
     }
-	
+
 	input[type="text"],
     input[type="email"],
     input[type="url"],
@@ -715,7 +714,7 @@ big {
         border-radius: 0;
         background: transparent;
     }
-	
+
 	input[type="text"],
     input[type="email"],
     input[type="url"],
@@ -724,14 +723,14 @@ big {
         padding: 0.8em;
         width: 100%;
     }
-	
+
     textarea {
-        overflow: auto; 
+        overflow: auto;
         padding: 1em;
-        vertical-align: top; 
+        vertical-align: top;
         width: 100%;
     }
-	
+
 	button,
     input,
     select,
@@ -740,7 +739,7 @@ big {
         margin: 0; /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
         vertical-align: baseline; /* Improves appearance and consistency in all browsers */
     }
-	
+
     input[type="submit"] {
         cursor: pointer;
         padding: 14px 16px;
@@ -824,7 +823,7 @@ svg {
     h3 {
         margin: 10px 0;
     }
-	
+
 	.post {
 		border-top: 0 !important
 	}
@@ -858,7 +857,7 @@ body .main .ufld_icon_links {
             left: 0;
             height: 100%;
             width: 100%;
-            background: rgba(255, 255, 255, 0); 
+            background: rgba(255, 255, 255, 0);
             -webkit-backface-visibility: hidden;
             backface-visibility: hidden;
             -webkit-transition: @tsbg;
@@ -867,7 +866,7 @@ body .main .ufld_icon_links {
         }
 
         span:hover::after {
-            background: rgba(255, 255, 255, 0.2); 
+            background: rgba(255, 255, 255, 0.2);
             -webkit-transition: @tsbg;
             -moz-transition: @tsbg;
             transition: @tsbg;
@@ -979,7 +978,7 @@ body .main .ufld_icon_links {
     margin-bottom: 0.4em;
 
     a:hover {
-        color: #444; 
+        color: #444;
         text-decoration: none;
     }
 }
@@ -1100,7 +1099,7 @@ body .main .ufld_icon_links {
         list-style: none;
     }
     li:last-child {
-		
+
     }
 
     li ul {
@@ -1138,7 +1137,7 @@ body .main .ufld_icon_links {
         width: 100%;
         height: 100%;
         top: 0;
-        left: 0;   
+        left: 0;
         z-index: 2;
     }
 
@@ -1158,7 +1157,7 @@ body .main .ufld_icon_links {
         transform: rotate(-180deg);
 
         i {
-            line-height: 0; 
+            line-height: 0;
             position: relative;
             float: left;
         }
@@ -1209,7 +1208,7 @@ body .main .ufld_icon_links {
 
 .main .evo_post_more_link, .evo_post__excerpt_more_link {
 	display: block;
-	
+
     a {
         cursor: pointer;
         padding: 14px 16px;
@@ -1272,10 +1271,10 @@ body .main .ufld_icon_links {
 
 .jumbotron .post {
     background: transparent;
-    padding: 0; 
+    padding: 0;
     margin-right: 0;
     border-radius: 0;
-    margin-bottom: 0; 
+    margin-bottom: 0;
     border-bottom: 0;
 }
 
@@ -1315,19 +1314,15 @@ body .main .ufld_icon_links {
 
 	.in-response {
 		margin-top: 3px;
-		font-size: 0.8em;		
+		font-size: 0.8em;
 		margin-left: 0;
 	}
-		
-		
+
+
     .panel-heading {
         background: transparent !important;
         padding: 0;
-        float: left;
         margin-top: 1em;
-
-
-
 
         .panel-title,
         .evo_comment_title {
@@ -1339,6 +1334,16 @@ body .main .ufld_icon_links {
             font-size: 1.1em;
             margin: 0;
             display: block;
+
+            .evo_status {
+                @media screen and ( max-width: 640px ) {
+                    float: none !important;
+                    &:before {
+                        display: block;
+                        content: " ";
+                    }
+                }
+            }
         }
 
     }
@@ -1434,8 +1439,8 @@ body .main .ufld_icon_links {
         border: 0;
         overflow: visible;
         .form-group {
-            margin-right: 0; 
-            margin-left: 0; 
+            margin-right: 0;
+            margin-left: 0;
         }
 
         .control-buttons input {
@@ -1515,7 +1520,7 @@ body .main .ufld_icon_links {
         margin-bottom: 10px;
         color: rgba(0, 0, 0, 0.6);
     }
-	
+
 	input[type="submit"] {
 		text-align: left;
 	}
@@ -1531,16 +1536,16 @@ body .main .ufld_icon_links {
     border-radius: 0;
     margin-top: 2.6em;
     margin-bottom: 0;
-			
+
 			&.panel-meta {
 			    border: 2px solid #5bc0de;
 				padding: 0 15px;
-				
+
 				.panel-body {
 					background: transparent !important;
 				}
 			}
-	
+
 	.panel-heading {
 		background: transparent !important;
         border: 0;
@@ -1564,9 +1569,9 @@ body .main .ufld_icon_links {
         border: 0;
         overflow: visible;
         .form-group {
-            margin-right: 0; 
-            margin-left: 0; 
-			
+            margin-right: 0;
+            margin-left: 0;
+
 			.control-label {
 				text-align: left;
 			}
@@ -1644,11 +1649,11 @@ body .main .ufld_icon_links {
         margin-bottom: 10px;
         color: rgba(0, 0, 0, 0.6);
     }
-	
+
 	input[type="submit"] {
 		text-align: left;
 	}
-	
+
 }
 
 
@@ -1658,7 +1663,7 @@ body .main .ufld_icon_links {
     p {
 		text-align: left !important;
 	}
-	
+
 	a {
 		border: 0;
 		padding: 0;
@@ -1667,7 +1672,7 @@ body .main .ufld_icon_links {
 			background: transparent !important;
 		}
 	}
-    
+
 	.fa-envelope-square:before {
         font-family: Fontawesome;
         -webkit-font-smoothing: antialiased;
@@ -1683,7 +1688,7 @@ body .main .ufld_icon_links {
     p {
 		text-align: left !important;
 	}
-	
+
 	a {
 		border: 0;
 		font-size: 18px;
@@ -1799,7 +1804,7 @@ body .main .ufld_icon_links {
 /* Star rating */
 
 
-.main div.star_rating, 
+.main div.star_rating,
 .main div.star_rating div {
     background: 0 0;
     overflow: visible;
@@ -1822,7 +1827,7 @@ body .main .ufld_icon_links {
     visibility: hidden;
 
     >div {
-        visibility: hidden;  
+        visibility: hidden;
     }
 
     .raty_cancel_off, .raty_cancel_on, .raty_star_off, .raty_star_on {
@@ -1910,7 +1915,7 @@ body .main .ufld_icon_links {
         .btn-success {
             color: #5cb85c;
             button {
-                color: #5cb85c; 
+                color: #5cb85c;
             }
         }
 
@@ -2024,7 +2029,7 @@ body .main .ufld_icon_links {
     }
 
     >ul {
-        margin-bottom: 2em; 
+        margin-bottom: 2em;
     }
 
 
@@ -2120,7 +2125,7 @@ body .main .ufld_icon_links {
 
 @media (max-width: 990px) {
     .widget_core_user_links {
-        margin-top: 0px; 
+        margin-top: 0px;
         margin-bottom: -1em;
     }
 
@@ -2149,7 +2154,7 @@ body .main .ufld_icon_links {
     }
 
 
-    .main .evo_comment .panel-body .evo_comment_footer small 
+    .main .evo_comment .panel-body .evo_comment_footer small
     .comment_actions {
 
         float: left;
@@ -2159,7 +2164,7 @@ body .main .ufld_icon_links {
             margin: 0 .6em 0 0;
         }
     }
-	
+
 }
 
 
@@ -2288,7 +2293,7 @@ body .main .ufld_icon_links {
         }
 
     }
-	
+
 }
 
 
@@ -2460,7 +2465,7 @@ ul.message_group {
 			padding: 20px;
 			border: none;
 		}
-		
+
 		.form-group {
 			> label {
 			    display: block;
@@ -2473,7 +2478,7 @@ ul.message_group {
 				border-radius: 0;
 				box-shadow: none;
 			}
-			
+
 			&.pull-right {
 				float: none !important;
 				button {
@@ -2483,14 +2488,14 @@ ul.message_group {
 					border-radius: 0;
 				}
 			}
-			
+
 			&.field_inline {
 				> label {
 					margin-top: 27px;
 				}
 			}
 		}
-		
+
 	}
 }
 
@@ -2578,7 +2583,7 @@ ul.message_group {
 			padding: 20px;
 			border: none;
 		}
-		
+
 		.form-group {
 			> label {
 			    display: block;
@@ -2591,7 +2596,7 @@ ul.message_group {
 				border-radius: 0;
 				box-shadow: none;
 			}
-			
+
 			&.pull-right {
 				float: none !important;
 				button {
@@ -2601,7 +2606,7 @@ ul.message_group {
 					border-radius: 0;
 				}
 			}
-			
+
 			&.field_inline {
 				> label {
 					margin-top: 27px;

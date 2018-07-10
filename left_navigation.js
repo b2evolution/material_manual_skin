@@ -1,4 +1,4 @@
-/* 
+/*
  * This code is used to fix left navigation bar when page is scrolled down
  */
 
@@ -38,7 +38,7 @@ jQuery( document ).ready( function()
 			if( $sidebar.hasClass( 'fixed' ) )
 			{ // Check and fix an overlapping of footer with sidebar
 				$sidebar.css( 'top', sidebar_top + 'px' );
-				var diff = parseInt( $sidebar.offset().top + $sidebar.outerHeight() - jQuery( '#evo_container__footer' ).offset().top );
+				var diff = parseInt( $sidebar.offset().top + $sidebar.outerHeight() - jQuery( '.evo_container__footer' ).offset().top );
 				if( diff >= 0 )
 				{
 					$sidebar.css( 'top', parseInt( sidebar_top - diff - 5 ) + 'px' );

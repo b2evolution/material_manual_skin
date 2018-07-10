@@ -760,45 +760,36 @@ body .main .ufld_icon_links a[class*="ufld__bgcolor"] span:after {
   height: 100%;
   width: 100%;
   background: rgba(255, 255, 255, 0);
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 body .main .ufld_icon_links a[class*="ufld__bgcolor"] span:hover::after {
   background: rgba(255, 255, 255, 0.2);
-  -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 body .main .ufld_icon_links a[class*="ufld__hovertext"] {
   background: transparent !important;
-  -webkit-transition: all 0s;
   transition: all 0s;
 }
 body .main .ufld_icon_links a[class*="ufld__hovertext"] span {
-  -webkit-transition: all 0.1s;
   transition: all 0.1s;
 }
 body .main .ufld_icon_links a[class*="ufld__hovertext"] span:hover {
-  -webkit-transition: all 0.1s;
   transition: all 0.1s;
 }
 body .main .ufld_icon_links a[class*="ufld__hoverbgcolor"] span {
   border-radius: 50%;
   color: #ffffff;
-  -webkit-transition: all 0.1s;
   transition: all 0.1s;
 }
 body .main .ufld_icon_links a[class*="ufld__hoverbgcolor"] span:hover {
   color: #fff;
-  -webkit-transition: all 0.1s;
   transition: all 0.1s;
 }
 body .main .ufld_icon_links a {
   background: rgba(255, 255, 255, 0) !important;
   margin: 1em 0 0 0.4em;
   text-align: center;
-  -webkit-transition: background 0.2s;
   transition: background 0.2s;
   width: 40px;
   height: 40px;
@@ -811,7 +802,6 @@ body .main .ufld_icon_links a:hover {
   border-radius: 50%;
   background: rgba(0, 0, 0, 0);
   color: #ffffff;
-  -webkit-transition: background 0.2s;
   transition: background 0.2s;
 }
 /* Navigation */
@@ -986,9 +976,7 @@ body .main .ufld_icon_links a:hover {
   position: absolute;
   right: 18px;
   top: 50%;
-  -webkit-transition: -webkit-transform 0.3s;
   transition: transform 0.3s;
-  -webkit-transform: rotate(-180deg);
   -ms-transform: rotate(-180deg);
   transform: rotate(-180deg);
 }
@@ -998,12 +986,9 @@ body .main .ufld_icon_links a:hover {
   float: left;
 }
 .main .panel-default > .panel-heading .collapsed .panel-icon {
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  -webkit-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   transform: rotate(0deg);
-  -webkit-transition: -webkit-transform 0.3s;
   transition: transform 0.3s;
 }
 .main .panel-title {
@@ -1114,7 +1099,6 @@ user.anonymous {
 .main .evo_comment .panel-heading {
   background: transparent !important;
   padding: 0;
-  float: left;
   margin-top: 1em;
 }
 .main .evo_comment .panel-heading .panel-title,
@@ -1126,6 +1110,17 @@ user.anonymous {
   font-size: 1.1em;
   margin: 0;
   display: block;
+}
+@media screen and (max-width: 640px) {
+  .main .evo_comment .panel-heading .panel-title .evo_status,
+  .main .evo_comment .panel-heading .evo_comment_title .evo_status {
+    float: none !important;
+  }
+  .main .evo_comment .panel-heading .panel-title .evo_status:before,
+  .main .evo_comment .panel-heading .evo_comment_title .evo_status:before {
+    display: block;
+    content: " ";
+  }
 }
 .main .evo_comment .panel-body {
   padding: 0.6em 0 0;
