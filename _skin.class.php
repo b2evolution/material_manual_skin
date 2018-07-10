@@ -21,8 +21,8 @@ class material_manual_Skin extends Skin
 	 * Skin version
 	 * @var string
 	 */
-	var $version = '1.2.0';
-	
+	var $version = '1.2.1';
+
 	/**
 	 * Do we want to use style.min.css instead of style.css ?
 	 */
@@ -57,8 +57,8 @@ class material_manual_Skin extends Skin
 	{
 		return 6;
 	}
-	
-	
+
+
 	/**
 	* Get supported collection kinds.
 	*
@@ -85,8 +85,8 @@ class material_manual_Skin extends Skin
 
 		return $supported_kinds;
 	}
-	
-	
+
+
 	/*
 	 * What CSS framework does has this skin been designed with?
 	 *
@@ -162,8 +162,8 @@ class material_manual_Skin extends Skin
 				'general_layout_end' => array(
 					'layout' => 'end_fieldset',
 				),
-				
-				
+
+
 				'header_layout_start' => array(
 					'layout' => 'begin_fieldset',
 					'label'  => T_('Header Settings')
@@ -183,8 +183,8 @@ class material_manual_Skin extends Skin
 				'header_layout_end' => array(
 					'layout' => 'end_fieldset',
 				),
-				
-				
+
+
 				'section_layout_start' => array(
 					'layout' => 'begin_fieldset',
 					'label'  => T_('Layout Settings')
@@ -205,7 +205,7 @@ class material_manual_Skin extends Skin
 				'section_layout_end' => array(
 					'layout' => 'end_fieldset',
 				),
-				
+
 
 				'section_colorbox_start' => array(
 					'layout' => 'begin_fieldset',
@@ -335,10 +335,10 @@ class material_manual_Skin extends Skin
 
 		// Skin specific initializations:
 		add_headline( '<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">' );
-					
+
 		// Add custom CSS:
 		$custom_css = '';
-		
+
 		// Custom background color:
 		if( $color = $this->get_setting( 'bg_color' ) )
 		{
@@ -380,8 +380,8 @@ class material_manual_Skin extends Skin
 			$custom_css .= '.post, .main .panel-group .panel li ul, .content ul li ul { border-top: 1px solid '.$color." }\n";
 			$custom_css .= 'input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], textarea, input[type="text"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="password"]:focus, input[type="search"]:focus, textarea:focus { border: 2px solid '.$color." !important }\n";
 		}
-		
-		
+
+
 		// Custom link hover color:
 		if( $color = $this->get_setting( 'header_bg' ) )
 		{
@@ -392,8 +392,8 @@ class material_manual_Skin extends Skin
 		{
 			$custom_css .= '.masterhead, .masterhead .widget_core_coll_title a, .masterhead .widget_core_coll_title a:hover, .disp_contacts .results .form-group.pull-right button, .disp_threads .results .form-group.pull-right button, .main .panel-default>.panel-heading .action_icon { color: '.$color."}\n";
 		}
-		
-		
+
+
 		// Limit images by max height:
 		$max_image_height = intval( $this->get_setting( 'max_image_height' ) );
 		if( $max_image_height > 0 )
@@ -431,7 +431,7 @@ class material_manual_Skin extends Skin
 		{ // Include JS code for left navigation panel only when it is displayed:
 			require_js( 'left_navigation.js', 'relative' );
 		}
-		
+
 		// Function for custom css
 		if( ! empty( $custom_css ) )
 		{
