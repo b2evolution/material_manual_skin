@@ -86,19 +86,6 @@ $params = array_merge( array(
 		$action_links = '<div class="'.button_class( 'group' ).'">'.$action_links.'</div>';
 	}
 
-	if( $Item->status != 'published' )
-	{
-		$Item->format_status( array(
-				'template' => '<div class="evo_status evo_status__$status$ badge pull-right">$status_title$</div>',
-			) );
-	}
-	$Item->title( array(
-			'link_type'  => $params['item_link_type'],
-			'before'     => '<div class="evo_post_title"><h1>',
-			'after'      => '</h1>'.$action_links.'</div>',
-			'nav_target' => false,
-		) );
-
 	if( $disp == 'single' )
 	{
 		// ------------------------- "Item Single" CONTAINER EMBEDDED HERE --------------------------
@@ -115,11 +102,19 @@ $params = array_merge( array(
 			// This will enclose the title of each widget:
 			'block_title_start' => '<h3>',
 			'block_title_end' => '</h3>',
-			// Template params for "Item Tags" widget
+			// Template params for "Item Visibility Badge" widget:
+			'widget_item_visibility_badge_display'  => ( ! $Item->is_intro() && $Item->status != 'published' ),
+			'widget_item_visibility_badge_template' => '<div class="evo_status evo_status__$status$ badge pull-right" data-toggle="tooltip" data-placement="top" title="$tooltip_title$">$status_title$</div>',
+			// Template params for "Item Title" widget:
+			'widget_item_title_params'  => array(
+				'before' => '<div class="evo_post_title">'.( in_array( $disp, array( 'single', 'page' ) ) ? '<h1>' : '<h2>' ),
+				'after' => ( in_array( $disp, array( 'single', 'page' ) ) ? '</h1>' : '</h2>' ).$action_links.'</div>',
+			),
+			// Template params for "Item Tags" widget:
 			'widget_item_tags_before'    => '<nav class="small post_tags text-muted">',
 			'widget_item_tags_after'     => '</nav>',
 			'widget_item_tags_separator' => ', ',
-			// Template params for "Small Print" widget
+			// Template params for "Small Print" widget:
 			'widget_item_small_print_before'         => '<p class="small text-muted">',
 			'widget_item_small_print_after'          => '</p>',
 			'widget_item_small_print_display_author' => false,
@@ -181,7 +176,7 @@ $params = array_merge( array(
 		// /skins/_item_feedback.inc.php file into the current skin folder.
 		// ---------------------- END OF FEEDBACK (COMMENTS/TRACKBACKS) ---------------------
 	?>
-	
+
 	<?php
 	if( evo_version_compare( $app_version, '6.7' ) >= 0 )
 	{	// We are running at least b2evo 6.7, so we can include this file:

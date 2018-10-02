@@ -744,6 +744,9 @@ svg {
 .evo_widget a span.fa {
   margin-right: 10px !important;
 }
+.evo_widget .evo_post_title a span.fa {
+  margin-right: auto !important;
+}
 /* Social Icons */
 body .main .ufld_icon_links {
   text-align: right;
