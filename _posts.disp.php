@@ -28,18 +28,26 @@ if( isset( $tag ) )
 
 	if( isset( $MainList ) && !empty( $MainList ) )
 	{
-		// -------------------- PREV/NEXT PAGE LINKS (POST LIST MODE) --------------------
-		mainlist_page_links( array(
-                        'block_start' => '<div class="center"><ul class="pagination">',
-                        'block_end' => '</ul></div>',
-                        'page_current_template' => '<span class="current">$page_num$</span>',
-                        'page_item_before' => '<li>',
-                        'page_item_after' => '</li>','page_item_current_before' => '<li class="active">',
-						'page_item_current_after'  => '</li>',
-                        'prev_text' => '<i class="fa fa-angle-left"></i>',
-                        'next_text' => '<i class="fa fa-angle-right"></i>',
-			) );
-		// ------------------------- END OF PREV/NEXT PAGE LINKS -------------------------
+		// ------------------------- "Item List" CONTAINER EMBEDDED HERE --------------------------
+		// Display container contents:
+		widget_container( 'item_list', array(
+			// The following (optional) params will be used as defaults for widgets included in this container:
+			'container_display_if_empty' => false, // If no widget, don't display container at all
+			// This will enclose each widget in a block:
+			'block_start'           => '<div class="center"><ul class="pagination">',
+			'block_end'             => '</ul></div>',
+			// This will enclose the title of each widget:
+			'block_title_start'     => '<h3>',
+			'block_title_end'       => '</h3>',
+			// The following params will be used as default for widgets
+			'page_current_template' => '<span class="current">$page_num$</span>',
+			'page_item_before' => '<li>',
+			'page_item_after' => '</li>','page_item_current_before' => '<li class="active">',
+			'page_item_current_after'  => '</li>',
+			'prev_text' => '<i class="fa fa-angle-left"></i>',
+			'next_text' => '<i class="fa fa-angle-right"></i>',
+		) );
+		// ----------------------------- END OF "Item List" CONTAINER -----------------------------
 
 		// --------------------------------- START OF POSTS -------------------------------------
 		// Display lists of the posts
@@ -53,15 +61,15 @@ if( isset( $tag ) )
 
 		// -------------------- PREV/NEXT PAGE LINKS (POST LIST MODE) --------------------
 		mainlist_page_links( array(
-                        'block_start' => '<div class="center"><ul class="pagination">',
-                        'block_end' => '</ul></div>',
-                        'page_current_template' => '<span class="current">$page_num$</span>',
-                        'page_item_before' => '<li>',
-                        'page_item_after' => '</li>','page_item_current_before' => '<li class="active">',
-						'page_item_current_after'  => '</li>',
-                        'prev_text' => '<i class="fa fa-angle-left"></i>',
-                        'next_text' => '<i class="fa fa-angle-right"></i>',
-			));
+			'block_start' => '<div class="center"><ul class="pagination">',
+			'block_end' => '</ul></div>',
+			'page_current_template' => '<span class="current">$page_num$</span>',
+			'page_item_before' => '<li>',
+			'page_item_after' => '</li>','page_item_current_before' => '<li class="active">',
+			'page_item_current_after'  => '</li>',
+			'prev_text' => '<i class="fa fa-angle-left"></i>',
+			'next_text' => '<i class="fa fa-angle-right"></i>',
+		) );
 		// ------------------------- END OF PREV/NEXT PAGE LINKS -------------------------
 	}
 }
@@ -176,18 +184,26 @@ elseif( !empty( $cat ) && ( $cat > 0 ) )
 } // End of Category's page
 else
 { // Display the latest posts:
-	// -------------------- PREV/NEXT PAGE LINKS (POST LIST MODE) --------------------
-	mainlist_page_links( array(
-                        'block_start' => '<div class="center"><ul class="pagination">',
-                        'block_end' => '</ul></div>',
-                        'page_current_template' => '<span class="current">$page_num$</span>',
-                        'page_item_before' => '<li>',
-                        'page_item_after' => '</li>','page_item_current_before' => '<li class="active">',
-						'page_item_current_after'  => '</li>',
-                        'prev_text' => '<i class="fa fa-angle-left"></i>',
-                        'next_text' => '<i class="fa fa-angle-right"></i>',
-			));
-	// ------------------------- END OF PREV/NEXT PAGE LINKS -------------------------
+	// ------------------------- "Item List" CONTAINER EMBEDDED HERE --------------------------
+	// Display container contents:
+	widget_container( 'item_list', array(
+		// The following (optional) params will be used as defaults for widgets included in this container:
+		'container_display_if_empty' => false, // If no widget, don't display container at all
+		// This will enclose each widget in a block:
+		'block_start'           => '<div class="center"><ul class="pagination">',
+		'block_end'             => '</ul></div>',
+		// This will enclose the title of each widget:
+		'block_title_start'     => '<h3>',
+		'block_title_end'       => '</h3>',
+		// The following params will be used as default for widgets
+		'page_current_template' => '<span class="current">$page_num$</span>',
+		'page_item_before' => '<li>',
+		'page_item_after' => '</li>','page_item_current_before' => '<li class="active">',
+		'page_item_current_after'  => '</li>',
+		'prev_text' => '<i class="fa fa-angle-left"></i>',
+		'next_text' => '<i class="fa fa-angle-right"></i>',
+	) );
+	// ----------------------------- END OF "Item List" CONTAINER -----------------------------
 ?>
 <ul class="posts_list">
 <?php
@@ -205,15 +221,15 @@ else
 <?php
 	// -------------------- PREV/NEXT PAGE LINKS (POST LIST MODE) --------------------
 	mainlist_page_links( array(
-                        'block_start' => '<div class="center"><ul class="pagination">',
-                        'block_end' => '</ul></div>',
-                        'page_current_template' => '<span class="current">$page_num$</span>',
-                        'page_item_before' => '<li>',
-                        'page_item_after' => '</li>','page_item_current_before' => '<li class="active">',
-						'page_item_current_after'  => '</li>',
-                        'prev_text' => '<i class="fa fa-angle-left"></i>',
-                        'next_text' => '<i class="fa fa-angle-right"></i>',
-			));
+		'block_start' => '<div class="center"><ul class="pagination">',
+		'block_end' => '</ul></div>',
+		'page_current_template' => '<span class="current">$page_num$</span>',
+		'page_item_before' => '<li>',
+		'page_item_after' => '</li>','page_item_current_before' => '<li class="active">',
+		'page_item_current_after'  => '</li>',
+		'prev_text' => '<i class="fa fa-angle-left"></i>',
+		'next_text' => '<i class="fa fa-angle-right"></i>',
+	) );
 	// ------------------------- END OF PREV/NEXT PAGE LINKS -------------------------
 } // End of List of the latest posts
 

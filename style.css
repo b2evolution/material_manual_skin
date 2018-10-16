@@ -266,10 +266,15 @@ div#skin_wrapper.skin_wrapper_loggedin .sitewide_header {
   font-size: inherit;
   width: auto !important;
 }
+.chapters_list .evo_widget .link .fa,
+.posts_list .evo_widget .link .fa {
+  margin-right: 5px !important;
+}
 .posts_list h3 {
   display: inline-block;
 }
-.posts_list li > .btn-group {
+.posts_list li > .btn-group,
+.posts_list li .widget_core_item_title .btn-group {
   margin: 0 0 6px 30px;
 }
 ol.breadcrumb {
@@ -737,6 +742,12 @@ svg {
 }
 .evo_widget h3 {
   margin: 10px 0;
+}
+.evo_widget.widget_core_item_title h3 {
+  margin: 20px 0;
+}
+.evo_widget.widget_core_item_title .btn-group a span.fa {
+  margin-right: 0 !important;
 }
 .evo_widget .post {
   border-top: 0 !important;

@@ -133,6 +133,48 @@ $params = array_merge( array(
 		) );
 		// ----------------------------- END OF "Item Single" CONTAINER -----------------------------
 	}
+	elseif( $disp == 'page' )
+	{
+		// ------------------------- "Item Page" CONTAINER EMBEDDED HERE --------------------------
+		// Display container contents:
+		widget_container( 'item_page', array(
+			'widget_context' => 'item',	// Signal that we are displaying within an Item
+			// The following (optional) params will be used as defaults for widgets included in this container:
+			'container_display_if_empty' => false, // If no widget, don't display container at all
+			// This will enclose each widget in a block:
+			'block_start' => '<div class="evo_widget $wi_class$">',
+			'block_end' => '</div>',
+			// This will enclose the title of each widget:
+			'block_title_start' => '<h3>',
+			'block_title_end' => '</h3>',
+			// Template params for "Item Title" widget:
+			'widget_item_title_params'  => array(
+				'before' => '<div class="evo_post_title">'.( in_array( $disp, array( 'single', 'page' ) ) ? '<h1>' : '<h2>' ),
+				'after' => ( in_array( $disp, array( 'single', 'page' ) ) ? '</h1>' : '</h2>' ).$action_links.'</div>',
+			),
+			// Template params for "Item Tags" widget:
+			'widget_item_tags_before'    => '<nav class="small post_tags text-muted">',
+			'widget_item_tags_after'     => '</nav>',
+			'widget_item_tags_separator' => ', ',
+			// Template params for "Small Print" widget:
+			'widget_item_small_print_before'         => '<p class="small text-muted">',
+			'widget_item_small_print_after'          => '</p>',
+			'widget_item_small_print_display_author' => false,
+			// Params for skin file "_item_content.inc.php"
+			'widget_item_content_params' => $params,
+			// Template params for "Item Attachments" widget:
+			'widget_item_attachments_params' => array(
+					'limit_attach'       => 1000,
+					'before'             => '<div class="evo_post_attachments"><h3>'.T_('Attachments').':</h3><ul class="evo_files">',
+					'after'              => '</ul></div>',
+					'before_attach'      => '<li class="evo_file">',
+					'after_attach'       => '</li>',
+					'before_attach_size' => ' <span class="evo_file_size">(',
+					'after_attach_size'  => ')</span>',
+				),
+		) );
+		// ----------------------------- END OF "Item Page" CONTAINER -----------------------------
+	}
 	else
 	{
 		// ---------------------- POST CONTENT INCLUDED HERE ----------------------

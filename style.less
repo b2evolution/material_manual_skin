@@ -310,15 +310,20 @@ div#skin_wrapper.skin_wrapper_loggedin .sitewide_header {
 		margin-right: 5px;
 		font-size: inherit;
 		width: auto !important;
-	}
+    }
+    .evo_widget {
+        .link .fa {
+            margin-right: 5px !important;
+        }
+    }
 }
 .posts_list {
 	h3 {
 		display: inline-block;
 	}
-	li > .btn-group {
+	li > .btn-group, li .widget_core_item_title .btn-group {
 		margin: 0 0 6px 30px;
-	}
+    }
 }
 
 // Breadcrumb paths
@@ -822,6 +827,15 @@ svg {
 
     h3 {
         margin: 10px 0;
+    }
+
+    &.widget_core_item_title {
+        h3 {
+            margin: 20px 0;
+        }
+        .btn-group a span.fa {
+            margin-right: 0 !important;
+        }
     }
 
     .post {
