@@ -69,8 +69,10 @@ if( ! empty( $params['Item'] ) )
 			'link_class'      => 'link',
 		),
 		// Item Visibility Badge widge template
-		'widget_item_visibility_badge_display'  => ( ! $Item->is_intro() && $Item->status != 'published' ),
-		'widget_item_visibility_badge_template' => '<div class="evo_status evo_status__$status$ badge pull-right" data-toggle="tooltip" data-placement="top" title="$tooltip_title$">$status_title$</div>',
+		'widget_item_visibility_badge_display' => ( ! $Item->is_intro() && $Item->status != 'published' ),
+		'widget_item_visibility_badge_params'  => array(
+				'template' => '<div class="evo_status evo_status__$status$ badge pull-right" data-toggle="tooltip" data-placement="top" title="$tooltip_title$">$status_title$</div>',
+			),
 	) );
 	// ----------------------------- END OF "Item in List" CONTAINER -----------------------------
 

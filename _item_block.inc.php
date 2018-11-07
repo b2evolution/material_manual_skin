@@ -103,8 +103,10 @@ $params = array_merge( array(
 			'block_title_start' => '<h3>',
 			'block_title_end' => '</h3>',
 			// Template params for "Item Visibility Badge" widget:
-			'widget_item_visibility_badge_display'  => ( ! $Item->is_intro() && $Item->status != 'published' ),
-			'widget_item_visibility_badge_template' => '<div class="evo_status evo_status__$status$ badge pull-right" data-toggle="tooltip" data-placement="top" title="$tooltip_title$">$status_title$</div>',
+			'widget_item_visibility_badge_display' => ( ! $Item->is_intro() && $Item->status != 'published' ),
+			'widget_item_visibility_badge_params'  => array(
+					'template' => '<div class="evo_status evo_status__$status$ badge pull-right" data-toggle="tooltip" data-placement="top" title="$tooltip_title$">$status_title$</div>',
+				),
 			// Template params for "Item Title" widget:
 			'widget_item_title_params'  => array(
 				'before' => '<div class="evo_post_title">'.( in_array( $disp, array( 'single', 'page' ) ) ? '<h1>' : '<h2>' ),
