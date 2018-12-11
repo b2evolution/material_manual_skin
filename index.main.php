@@ -127,20 +127,6 @@ siteskin_include( '_site_body_header.inc.php' );
 							'block_end'   => '</div>',
 						) );
 					// --------------------------------- END OF MESSAGES ---------------------------------
-				}	
-
-				if( ! empty( $cat ) )
-				{ // Display breadcrumbs if some category is selected
-					skin_widget( array(
-							// CODE for the widget:
-							'widget' => 'breadcrumb_path',
-							// Optional display params
-							'block_start'      => '<nav><ol class="breadcrumb">',
-							'block_end'        => '</ol></nav>',
-							'separator'        => '',
-							'item_mask'        => '<li><a href="$url$">$title$</a></li>',
-							'item_active_mask' => '<li class="active">$title$</li>',
-						) );
 				}
 			?>
 
@@ -198,7 +184,7 @@ siteskin_include( '_site_body_header.inc.php' );
                             'block_after' => '',
                             'block_separator' => '<br /><br />')))
                     )),
-));					
+));
 		// Note: you can customize any of the sub templates included here by
 		// copying the matching php file into your skin directory.
 		// ------------------------- END OF MAIN CONTENT TEMPLATE ---------------------------
@@ -397,7 +383,7 @@ siteskin_include( '_site_body_header.inc.php' );
 			</p>
 
 		</div><!-- .col -->
-		
+
 	</footer><!-- .row -->
 
 
