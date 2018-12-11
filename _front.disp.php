@@ -17,14 +17,20 @@ if( !defined('EVO_MAIN_INIT') ) die( 'Please, do not access this page directly.'
 
 // Home page, display full categories list
 
+// Go Grab the featured post:
+$intro_Item = & get_featured_Item( 'front' ); // $intro_Item is used below for comments form
+$Item = $intro_Item;
+
 // ------------------------- "Front Page Main Area" CONTAINER EMBEDDED HERE --------------------------
 // Display container and contents:
-skin_container( NT_('Front Page Main Area'), array(
+skin_container( NT_('Front Page Main Area'), array_merge( array(
 	// The following params will be used as defaults for widgets included in this container:
 		'block_start'       => '<div class="evo_widget $wi_class$">',
 		'block_end'         => '</div>',
 		'block_title_start' => '<h2 class="page-header">',
 		'block_title_end'   => '</h2>',
+		'intro_class'       => 'jumbotron',
+		'featured_class'    => 'featurepost',
 
 		// Template params for "Content Hierarchy" widget:
 		'widget_content_hierarchy_params' => array(
@@ -35,7 +41,7 @@ skin_container( NT_('Front Page Main Area'), array(
 				'item_before_closed'   => get_icon( 'expand' ),
 				'item_before_post'     => get_icon( 'file_message' ),
 			),
-	) );
+		), $Skin->get_template( 'disp_params' ) ) );
 // ----------------------------- END OF "Front Page Main Area" CONTAINER -----------------------------
 
 if( ! empty( $intro_Item ) )
